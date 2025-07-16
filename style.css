@@ -16,34 +16,10 @@ body{
   letter-spacing: 0.01em;
   cursor: none;
   color: #A0A0A0;
-  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-
+  font-family: 'DM Sans', sans-serif; /* Fallback to generic sans-serif */
+  font-weight: 300; /* Regular */
+  line-height: 1.6;
 }
-/* 
-.cursor-dot{
-  width: 5px;
-  height: 5px;
-  background-color: #af8e21;
-}
-
-.cursor-outline{
-  width: 30px;
-  height: 30px;
-  border: 2px solid #af8e21;
-}
-
-.cursor-dot, .cursor-outline{
-  position: fixed;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  z-index: 1;
-  pointer-events: none;
-} */
-
-
 
 body {
   --sb-track-color: #2c2c2c;
@@ -104,7 +80,7 @@ html {
     margin: 0 auto;
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(238, 176, 6, 0.318);
-    font-family: 'Inter', sans-serif;
+    font-family: 'DM Sans', sans-serif; /* Fallback to generic sans-serif */
     max-width: 400px;
     color: #e5e4e2;
     animation: fadeInUp 0.8s ease-out;
@@ -128,8 +104,10 @@ html {
   max-width: 800px;
  margin: 50px auto; 
   color: #A0A0A0;
-  font-family: 'Neue Haas Unica', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-animation: fadeInUp 0.8s ease-out;
+  font-family: 'DM Sans', sans-serif; /* Fallback to generic sans-serif */
+  font-weight: 300; /* Regular */
+  line-height: 1.6;
+  animation: fadeInUp 0.8s ease-out;
 }
 
  input[type="radio"] {
@@ -154,9 +132,9 @@ display: none;
 }
 
 .tabs label {
-  /* font-family: 'Montserrat', sans-serif; */
-  font-family: 'TT Norms Pro', 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
+  font-family: 'DM Serif Display', serif; /* Fallback to generic serif */
+  font-weight: 400; /* DM Serif Display often looks best at its regular weight for display */
+  line-height: 1.2;
   flex: 1;
   text-align: center;
   padding: 14px 18px;
@@ -207,8 +185,10 @@ input#tab-other:checked ~ .tab-content .other {
 }  
 
 h3,h4{
-  letter-spacing: 0.03em;
-  font-family: 'TT Norms Pro', 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    letter-spacing: 0.03em;
+    font-family: 'DM Serif Display', serif; /* Fallback to generic serif */
+    font-weight: 400; /* DM Serif Display often looks best at its regular weight for display */
+    line-height: 1.2;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -221,6 +201,9 @@ h3{
   letter-spacing: 0.05em;
 }
 h2{
+  font-family: 'DM Serif Display', serif; /* Fallback to generic serif */
+  font-weight: 400; /* DM Serif Display often looks best at its regular weight for display */
+  line-height: 1.2;
   color: #af8e21;
 }
 .token{
@@ -245,10 +228,6 @@ h2{
 .intro{
   margin-top: 30p;
 }
-
- /* svg{
-    margin: 30px;
-}  */
 
 .icon-row {
   display: flex;
@@ -306,27 +285,29 @@ h2{
 
 .links {
 display: flex;
- max-width: 800px; 
-  width: 100%;
- flex-wrap: nowrap;
-  border: 2px solid #af8e21;
-  border-radius: 16px;
-  animation: borderShift 1s linear infinite;
+max-width: 800px; 
+width: 100%;
+flex-wrap: nowrap;
+border: 2px solid #af8e21;
+border-radius: 16px;
+animation: borderShift 1s linear infinite;
 overflow-x: auto;
-  justify-content:flex-start;
-  gap: 40px;
+justify-content:flex-start;
+gap: 40px;
   /* align-items: center; */
-  padding: 10px 20px;
-  scroll-snap-type: x mandatory;
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.03);
-  border-radius: 16px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+padding: 10px 20px;
+scroll-snap-type: x mandatory;
+backdrop-filter: blur(10px);
+background-color: rgba(255, 255, 255, 0.03);
+border-radius: 16px;
+box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
 }
 
 .projects a {
     display: inline-block;
-    font-family: 'Inter', sans-serif;
+    font-family: 'DM Sans', sans-serif; /* Fallback to generic sans-serif */
+    font-weight: 400; /* Regular */
+    line-height: 1.6;
     color: #af8e21;
     text-decoration: none;
     font-weight: 500;
@@ -409,7 +390,7 @@ svg.icon {
 }
 
 .experience h3 {
-    color: #eeb006;
+    color: #af8e21;
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
