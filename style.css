@@ -1,0 +1,642 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  padding-top: 30px;
+  background-color: #2C2C2C;
+  letter-spacing: 0.01em;
+  cursor: none;
+  color: #A0A0A0;
+  font-family: 'DM Sans', sans-serif; /* Fallback to generic sans-serif */
+  font-weight: 300; /* Regular */
+  line-height: 1.6;
+}
+
+body {
+  --sb-track-color: #2c2c2c;
+  --sb-thumb-color: #af8e21;
+  --sb-size: 14px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+  
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.container{
+  
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: 50px;
+  max-width: 800px;
+  margin: 0 auto;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 60px;
+
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.fun-fact-card {
+    background-color: #2C2C2C;
+    padding: 24px;
+    margin: 0 auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(238, 176, 6, 0.318);
+    font-family: 'DM Sans', sans-serif; /* Fallback to generic sans-serif */
+    max-width: 400px;
+    color: #e5e4e2;
+    animation: fadeInUp 0.8s ease-out;
+    margin-bottom: 40px;
+}
+
+.fun-fact-card h4 {
+    color: #af8e21;
+    font-size: 14px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.fun-fact-card strong {
+    color: #af8e21;
+}
+
+
+.tab-container {
+  max-width: 800px;
+ margin: 50px auto; 
+  color: #A0A0A0;
+  font-family: 'DM Sans', sans-serif; /* Fallback to generic sans-serif */
+  font-weight: 300; /* Regular */
+  line-height: 1.6;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+ input[type="radio"] {
+display: none;
+
+  
+} 
+
+.tabs {
+  display: flex;
+  background: linear-gradient(145deg, #A0A0A0, #151515);
+  border-bottom: 2px solid rgba(212, 175, 55, 0.25);
+  overflow: hidden;
+  border: 2px solid #af8e21;
+  animation: pulseBorder 3s ease-in-out infinite;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 12px 20px;
+}
+
+.tabs label {
+  font-family: 'DM Serif Display', serif; /* Fallback to generic serif */
+  font-weight: 400; /* DM Serif Display often looks best at its regular weight for display */
+  line-height: 1.2;
+  flex: 1;
+  text-align: center;
+  padding: 14px 18px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.04);
+  color: #c2c2c2;
+  transition: all 0.3s ease;
+}
+
+.tabs label:hover {
+  background-color: rgba(212, 175, 55, 0.1);
+  color: #e5e4e2;
+
+}
+
+ input#tab-projects:checked ~ .tabs label[for="tab-projects"],
+input#tab-experience:checked ~ .tabs label[for="tab-experience"],
+input#tab-tools:checked ~ .tabs label[for="tab-tools"],
+input#tab-other:checked ~ .tabs label[for="tab-other"] {
+  background: #af8e21;
+  color: #2C2C2C;
+  border-radius: 16px;
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.1);
+  
+} 
+
+.tab-content {
+  margin-top: 20px;
+  background: #2C2C2C;
+  padding: 20px;
+  border-radius: 16px;
+  
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.05);
+  
+}
+
+.content {
+  display: none;
+}
+
+ input#tab-projects:checked ~ .tab-content .projects,
+input#tab-experience:checked ~ .tab-content .experience,
+input#tab-tools:checked ~ .tab-content .tools,
+input#tab-other:checked ~ .tab-content .other {
+  display: block;
+  
+}  
+
+h3,h4{
+    letter-spacing: 0.03em;
+    font-family: 'DM Serif Display', serif; /* Fallback to generic serif */
+    font-weight: 400; /* DM Serif Display often looks best at its regular weight for display */
+    line-height: 1.2;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+h3{
+  
+  font-size: 24px;
+  /* font-weight: 600; */
+  color: #af8e21;
+  text-shadow: 0 0 3px rgba(212, 175, 55, 0.4);
+  letter-spacing: 0.05em;
+}
+h2{
+  font-family: 'DM Serif Display', serif; /* Fallback to generic serif */
+  font-weight: 400; /* DM Serif Display often looks best at its regular weight for display */
+  line-height: 1.2;
+  color: #af8e21;
+}
+.token{
+  color: #b76e79;
+}
+.name{
+  background: linear-gradient(to right, #af8e21, #e5e4e2);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.intro, .links{
+  align-self: flex-start;
+    text-align: left;
+    width: 100%;
+    color: #e5e4e2;
+    font-size: 16px;
+    padding-top: 16px;
+    line-height: 2;
+    
+}
+.intro{
+  margin-top: 30p;
+}
+
+.icon-row {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+
+.icon-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px; /* keeps all icon blocks uniform */
+}
+
+.icon-block svg.icon {
+  width: 32px;
+  height: 32px;
+  transition: all 0.3s ease;
+}
+
+
+.icon-block img {
+  width: 48px;
+  height: 48px;
+  filter:  saturate(100%) sepia(20%) hue-rotate(10deg) contrast(110%);
+}
+
+.icon-block p {
+  margin-top: 8px;
+  font-size: 12px;
+  text-align: center;
+  color: #e5e4e2;
+  letter-spacing: 0.02em;
+
+}
+
+.icon-block:hover svg{
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.4));
+}
+
+.icon-block img:hover{
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+.links svg {
+  animation: fadeInUp 0.6s ease forwards;
+}
+.links svg:nth-child(1) { animation-delay: 0.2s; }
+.links svg:nth-child(2) { animation-delay: 0.3s; }
+.links svg:nth-child(3) { animation-delay: 0.4s; }
+
+
+.links {
+display: flex;
+max-width: 800px; 
+width: 100%;
+flex-wrap: nowrap;
+border: 2px solid #af8e21;
+border-radius: 16px;
+animation: borderShift 1s linear infinite;
+overflow-x: auto;
+justify-content:flex-start;
+gap: 40px;
+  /* align-items: center; */
+padding: 10px 20px;
+scroll-snap-type: x mandatory;
+backdrop-filter: blur(10px);
+background-color: rgba(255, 255, 255, 0.03);
+border-radius: 16px;
+box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+
+.projects a {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif; /* Fallback to generic sans-serif */
+    font-weight: 400; /* Regular */
+    line-height: 1.6;
+    color: #af8e21;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    position: relative;
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+}
+
+.projects a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #af8e21;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.projects a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.projects a:hover {
+    color: #fff;
+}
+
+
+svg.icon {
+  fill: #af8e21; /* Champagne Gold */
+  width: 32px;
+  height: 32px;
+  transition: fill 0.3s ease, transform 0.3s ease;
+  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.4));
+  cursor: pointer;
+}
+
+.projects div {
+    background-color: #2C2C2C;
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    /* box-shadow: 0 4px 20px rgba(238, 176, 6, 0.1); */
+    transition: all 0.3s ease;
+}
+
+.hov:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 24px rgba(238, 176, 6, 0.3);
+}
+
+.projects h4 {
+    color: #af8e21;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.projects p {
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+
+
+.experience-card {
+    background-color: #2C2C2C;
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.hov:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 24px rgba(238, 176, 6, 0.3);
+}
+
+.experience h3 {
+    color: #af8e21;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.experience-card h4 {
+    color: #af8e21;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.experience-card p {
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+
+
+.tool-card {
+    background-color: #2C2C2C;
+    padding: 20px;
+    border-radius: 12px;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.tool-card img {
+    margin-bottom: 10px;
+}
+
+.tool-card p {
+    color: #bbb;
+    font-size: 14px;
+}
+
+.hov:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 24px rgba(238, 176, 6, 0.3);
+}
+
+
+svg.icon:hover {
+  fill: #B76E79; /* Rose Gold */
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(183, 110, 121, 0.5));
+}
+
+
+
+
+.links::-webkit-scrollbar {
+  height: 0px; /* hide scrollbar for premium look */
+}
+
+.links svg {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  scroll-snap-align: center;
+}
+
+.links a {
+  color: inherit;
+  text-decoration: none;
+  cursor: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: none;
+}
+
+
+
+.tabs,
+.links {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+@keyframes softGlow {
+    0% {
+        opacity: 0.9;
+        box-shadow: 0 4px 20px rgba(238, 176, 6, 0.318);
+    }
+    50% {
+        opacity: 1;
+        box-shadow: 0 4px 30px rgba(238, 176, 6, 0.5);
+    }
+    100% {
+        opacity: 0.9;
+        box-shadow: 0 4px 20px rgba(238, 176, 6, 0.318);
+    }
+}
+
+.fun-fact-card {
+    animation: fadeInUp 0.8s ease-out, softGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseBorder {
+  0%   { border-color: #af8e21; box-shadow: 0 0 3px rgba(212, 175, 55, 0.3); }
+  50%  { border-color: #B76E79; box-shadow: 0 0 6px rgba(183, 110, 121, 0.5); }
+  100% { border-color: #af8e21; box-shadow: 0 0 3px rgba(212, 175, 55, 0.3); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+@keyframes borderShift {
+  0%   { border-color: #af8e21; }   /* Champagne Gold */
+  33%  { border-color: #B76E79; }   /* Rose Gold */
+  66%  { border-color: #E5E4E2; }   /* Platinum */
+  100% { border-color: #af8e21; }
+}
+
+
+@media (max-width: 768px) {
+  .links {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .links svg {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+}
+
+
+/* ========================================= */
+/*      Responsive Media Queries (Mobile)    */
+/* ========================================= */
+
+@media (max-width: 768px) {
+
+  /* --- Add Breathing Room to the Sides --- */
+  body {
+    /* Add padding to the SIDES of the body. This creates the breathing room. */
+    padding-left: 20px;
+    padding-right: 20px;
+    
+    /* Reduce the top space slightly on mobile */
+    padding-top: 20px;
+  }
+
+  /* --- Adjust Main Container --- */
+  .container {
+    /* By removing the side padding here, it will now respect the body's padding */
+    padding: 15px;
+    
+    /* The rest of the adjustments are still good */
+    gap: 30px; 
+    padding-bottom: 40px;
+  }
+
+  .tab-container {
+    /* Reduce the margin above the tabs */
+    margin: 30px auto;
+  }
+  
+  /* --- Typography --- */
+  h3 {
+    font-size: 20px;
+  }
+
+  .intro {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  
+  /* --- Tab Navigation (with horizontal scroll) --- */
+  .tabs {
+    /* This allows the .tabs element to stretch to the edges of the .container */
+    max-width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tabs label {
+    flex-shrink: 0; 
+    padding: 12px 16px; 
+    font-size: 14px;
+  }
+  
+  /* --- Social Links & Icons --- */
+  .links {
+    /* This also allows the links to stretch to the edges of the container */
+    max-width: 100%;
+    padding: 12px 15px;
+    gap: 20px; 
+  }
+
+  .links svg {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    cursor: none;
+  }
+
+  /* .icon-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  } */
+}
+
+/* Optional: For very small screens */
+@media (max-width: 480px) {
+    body {
+        /* Slightly reduce the side padding for the smallest screens */
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .tabs label {
+        font-size: 13px;
+        padding: 10px 14px;
+    }
+
+    .container {
+        gap: 25px;
+    }
+}
+
+
+
